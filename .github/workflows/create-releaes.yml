@@ -1,8 +1,6 @@
 name: "Create Release"
 on:
-  push:
-    tags:
-      - "*"
+  create:
 
 jobs:
   release:
