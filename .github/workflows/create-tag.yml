@@ -35,7 +35,7 @@ jobs:
         uses: actions/create-release@v1
         with:
           tag_name: ${{ steps.tag_version.outputs.new_tag }}
-          release_name: ${{ github.ref }}
+          release_name: ${{ steps.tag_version.outputs.new_tag }}
           body: ${{steps.github_release.outputs.changelog}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
