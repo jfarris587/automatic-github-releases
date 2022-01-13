@@ -19,20 +19,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # major:minor:patch
           default_bump: ${{contains(github.event.pull_request.labels.*.name, 'major') && 'major' || contains(github.event.pull_request.labels.*.name, 'minor') && 'minor' || contains(github.event.pull_request.labels.*.name, 'patch') && 'patch' || 'patch'}}
-
-      - name: build changelog
-        id: github_release
-        uses: mikepenz/release-changelog-builder-action@v1
-        with:
-          configuration: ".github/config/release-configuration.json"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: create release
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ steps.tag_version.outputs.new_tag }}
-          release_name: ${{ github.ref }}
-          body: ${{steps.github_release.outputs.changelog}}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
