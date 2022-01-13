@@ -16,4 +16,5 @@ jobs:
         uses: mathieudutour/github-tag-action@v6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-# if: contains(github.event.pull_request.labels.*.name, 'some-defined-label')
+          # major:minor:patch
+          custom_tag: ${{contains(github.event.pull_request.labels.*.name, 'major') && 'major' || contains(github.event.pull_request.labels.*.name, 'minor') && 'minor' || contains(github.event.pull_request.labels.*.name, 'patch') && 'patch' || 'patch'}}
