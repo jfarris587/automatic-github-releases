@@ -29,6 +29,6 @@
       "method": "sort"
     },
     "base_branches": [
-      "development"
+      "development", "main"
     ]
 }
