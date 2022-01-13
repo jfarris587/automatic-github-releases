@@ -16,4 +16,4 @@ jobs:
         uses: mathieudutour/github-tag-action@v6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-# if: contains(github.event.pull_request.labels.*.name, 'some-defined-label')
+# if: contains(github.event.pull_request.labels.*.name, 'some-defined-label')a
