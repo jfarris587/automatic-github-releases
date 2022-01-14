@@ -16,3 +16,4 @@ jobs:
           head: ${{ github.ref }}
           base: main
           title: ":tada: main merge"
+          labels: "minor"
