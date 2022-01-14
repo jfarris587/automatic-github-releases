@@ -1,0 +1,18 @@
+version: 1
+labels:
+- label: "feature"
+  title: "^\[Feature].*"
+- label: "bug"
+  title: "^\[Bug].*"
+- label: "chore"
+  title: "^\[Chore].*"
+- label: "tooling"
+  title: "^\[Tooling].*"
+- label: "feature"
+  title: "^feature/.*"
+- label: "bug"
+  title: "^bug/.*"
+- label: "chore"
+  title: "^chore/.*"
+- label: "tooling"
+  title: "^tooling/.*"
